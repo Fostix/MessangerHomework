@@ -1,16 +1,20 @@
 package Core.MessageModel;
 
-public class MessageModel {
+import Core.ID;
 
-    public String text;
-    public int id;
-
+public abstract class MessageModel {
+    private ID id;
     public MessageModel() {
-
+        ID id = new ID();
     }
 
-    public MessageModel(String text) {
-        this.text = text;
-        //
+    public ID getId() {
+        return id;
+    }
+
+
+
+    public void setId(ID id) {
+        this.id = id;
     }
 }

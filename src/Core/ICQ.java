@@ -1,11 +1,12 @@
 package Core;
 
 import Core.ClientModel.Client;
+import Core.DataModel.Repository;
 import Core.MessageModel.MessageModel;
 
 class ICQ implements Chat {
 
-    Repository repo;
+    private Repository repo;
 
     public ICQ(Repository currentRepo) {
         repo = currentRepo;
@@ -23,7 +24,7 @@ class ICQ implements Chat {
 
     @Override
     public void appendClient(Client client) {
-        System.out.println("\n >>> Вошел " + client.name);
+        System.out.println("\n >>> Вошел в чат " + client.name);
         repo.add(client);
 
     }

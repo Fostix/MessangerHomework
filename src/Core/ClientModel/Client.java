@@ -1,7 +1,10 @@
 package Core.ClientModel;
 
 import Core.Chat;
+import Core.MessageModel.AudioMessage;
+import Core.MessageModel.ImageMessage;
 import Core.MessageModel.MessageModel;
+import Core.MessageModel.TxtMessage;
 
 public abstract class Client {
     public String name;
@@ -16,18 +19,24 @@ public abstract class Client {
 
     public Client(String name) {
         this.name = name;
-
     }
     public void join(Chat chatroom) {
         this.chatroom = chatroom;
     }
 
     public void printMessage(MessageModel msg) {
-        System.out.printf("Core.ClientModel.User‚ %s: %s\n", name, msg.text);
+        System.out.printf("User‚ %s: %s\n", name, msg);
     }
 
-    public void sendMsg(String text) {
-        var mm = new MessageModel(text);
-        chatroom.sendMessage(mm, this);
+    public void sendTxtMsg(String msg) {
+        chatroom.sendMessage(new TxtMessage(msg), this);
+    }
+
+    public void sendAudioMsg(String msg) {
+        chatroom.sendMessage(new AudioMessage(msg), this);
+    }
+
+    public void sendImageMsg(String msg) {
+        chatroom.sendMessage(new ImageMessage(msg), this);
     }
 }

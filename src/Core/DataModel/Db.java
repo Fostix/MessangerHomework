@@ -1,22 +1,21 @@
 package Core.DataModel;
 
 import Core.ClientModel.Client;
-import Core.Repository;
 
 import java.util.ArrayList;
 
-public class Db implements Repository {
+public class Db<C extends Client> implements Repository<C> {
 
-    ArrayList<Client> users = new ArrayList<>();
+    ArrayList<C> users = new ArrayList<>();
 
     @Override
-    public void add(Client user) {
+    public void add(C user) {
         users.add(user);
     }
 
     @Override
-    public Client getByName(String name) {
-        for (Client user : users) {
+    public C getByName(String name) {
+        for (C user : users) {
             if (user.name == name) {
                 return user;
             }
@@ -25,15 +24,12 @@ public class Db implements Repository {
     }
 
     @Override
-    public Client getById(int id) {
-
+    public C getById(int id) {
         return users.get(id);
     }
 
     @Override
     public int getCount() {
-
         return users.size();
     }
-
 }
