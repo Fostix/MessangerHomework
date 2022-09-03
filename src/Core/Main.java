@@ -1,5 +1,6 @@
 package Core;
 
+import Core.ClientModel.Admin;
 import Core.ClientModel.Client;
 import Core.ClientModel.RegularUser;
 import Core.DataModel.Db;
@@ -14,6 +15,7 @@ import Core.DataModel.Db;
 public class Main {
     public static void main(String[] args) {
         ICQ icq = new ICQ(new Db());
+        Client client0 = new Admin("Арбуз", icq);
         Client client1 = new RegularUser("Барсук");
         client1.join(icq);
         Client client2 = new RegularUser("Бахрума", icq);
@@ -29,6 +31,8 @@ public class Main {
         //client5.sendAudioMsg("bla_bla.mp3");
         client3.sendImageMsg("photo.jpeg");
         client1.sendVideoMsg("song.mp3", "video.mp4");
+//        ((Admin) client0).getId();
 
+        ((Admin) client0).printInfo();
     }
 }

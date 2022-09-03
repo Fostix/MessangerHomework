@@ -3,9 +3,9 @@ package Core.DataModel;
 import Core.ClientModel.Client;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Db<C extends Client> implements Repository<C> {
-
+public class Db<C extends Client> implements Repository<C>, Iterable {
     ArrayList<C> users = new ArrayList<>();
 
     @Override
@@ -16,7 +16,7 @@ public class Db<C extends Client> implements Repository<C> {
     @Override
     public C getByName(String name) {
         for (C user : users) {
-            if (user.name == name) {
+            if (user.getName() == name) {
                 return user;
             }
         }
@@ -36,5 +36,22 @@ public class Db<C extends Client> implements Repository<C> {
     @Override
     public void remove(int id) {
 
+    }
+
+    @Override
+    public Iterator iterator() {
+        Iterator<C> iterator = new Iterator<C>() {
+            private int index = 0;
+            @Override
+            public boolean hasNext() {
+                return index < users.size();
+            }
+
+            @Override
+            public C next() {
+                return users.get(index++);
+            }
+        };
+        return iterator;
     }
 }

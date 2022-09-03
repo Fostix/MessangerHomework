@@ -4,9 +4,8 @@ import Core.Chat;
 import Core.MessageModel.*;
 
 public abstract class Client implements ClientSend {
-    public String name;
-    private Chat chatroom;
-
+    private String name;
+    protected Chat chatroom;
 
     public Client(String name, Chat chatroom) {
         this.name = name;
@@ -17,6 +16,11 @@ public abstract class Client implements ClientSend {
     public Client(String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
     public void join(Chat chatroom) {
         this.chatroom = chatroom;
     }
@@ -43,5 +47,10 @@ public abstract class Client implements ClientSend {
     @Override
     public void sendVideoMsg(String aMsg, String vMsg) {
         chatroom.sendMessage(new VideoMessage(aMsg, vMsg), this);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s", this.name);
     }
 }

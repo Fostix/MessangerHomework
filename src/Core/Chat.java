@@ -7,4 +7,8 @@ public interface Chat {
     void sendMessage(MessageModel mm, Client me);
 
     void appendClient(Client client);
+
+    void printInfo();
+
+    void getId();
 }
