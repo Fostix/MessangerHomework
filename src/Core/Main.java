@@ -24,8 +24,11 @@ public class Main {
         client1.sendTxtMsg("Привет всем!"); // Барсук
         client2.sendTxtMsg("Ну привет!"); // Бахрума
         Client client3 = new RegularUser("Вася", icq);
-        client3.sendAudioMsg("bla_bla.mp3");
+        Client client5 = new RegularUser("Барсук", icq);
+        client1.sendAudioMsg("bla_bla.mp3");
+        //client5.sendAudioMsg("bla_bla.mp3");
         client3.sendImageMsg("photo.jpeg");
+        client1.sendVideoMsg("song.mp3", "video.mp4");
 
     }
 }

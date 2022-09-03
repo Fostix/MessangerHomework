@@ -32,4 +32,9 @@ public class Db<C extends Client> implements Repository<C> {
     public int getCount() {
         return users.size();
     }
+
+    @Override
+    public void remove(int id) {
+
+    }
 }
