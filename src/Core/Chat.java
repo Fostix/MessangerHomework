@@ -10,5 +10,5 @@ public interface Chat {
 
     void printInfo();
 
-    void getId();
+    void removeUser(int id);
 }

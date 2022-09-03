@@ -35,7 +35,7 @@ public class Db<C extends Client> implements Repository<C>, Iterable {
 
     @Override
     public void remove(int id) {
-
+        users.remove(id);
     }
 
     @Override

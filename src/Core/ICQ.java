@@ -34,9 +34,9 @@ class ICQ implements Chat {
             System.out.printf("name: %s id: %s\n", client, id++);
         }
     }
+
     @Override
-    public void getId() {
-        for (var r : repo) {
-        }
+    public void removeUser(int id) {
+        repo.remove(id);
     }
 }
