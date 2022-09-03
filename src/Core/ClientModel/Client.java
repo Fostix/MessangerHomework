@@ -23,6 +23,7 @@ public abstract class Client{
 
     public void join(Chat chatroom) {
         this.chatroom = chatroom;
+        this.chatroom.appendClient(this);
     }
 
     public void printMessage(MessageModel msg) {

@@ -6,7 +6,7 @@ import Core.MessageModel.MessageModel;
 public interface Chat {
     void sendMessage(MessageModel mm, Client me);
 
-    void appendClient(Client client);
+    void appendClient(Client c);
 
     void printInfo();
 

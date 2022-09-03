@@ -1,10 +1,11 @@
 package Core.ClientModel;
 
 import Core.Chat;
+import Core.ClientModel.Interfaces.SendImageAndAudioMsg;
 import Core.MessageModel.AudioMessage;
 import Core.MessageModel.ImageMessage;
 
-public class Donate extends RegularUser implements SendImageAndAudioMsg{
+public class Donate extends RegularUser implements SendImageAndAudioMsg {
     public Donate(String name, Chat chatroom) {
         super(name, chatroom);
     }

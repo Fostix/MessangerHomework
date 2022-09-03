@@ -1,11 +1,10 @@
 package Core.ClientModel;
 
 import Core.Chat;
-import Core.MessageModel.AudioMessage;
-import Core.MessageModel.ImageMessage;
+import Core.ClientModel.Interfaces.SendVideoMsg;
 import Core.MessageModel.VideoMessage;
 
-public class PremiumUser extends Donate implements SendVideoMsg{
+public class PremiumUser extends Donate implements SendVideoMsg {
     public PremiumUser(String name, Chat chatroom) {
         super(name, chatroom);
     }

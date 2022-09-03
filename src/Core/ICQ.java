@@ -14,17 +14,28 @@ class ICQ implements Chat {
 
     @Override
     public void sendMessage(MessageModel mm, Client me) {
-        for (Object ff: repo) {
-            if (ff.getClass().getName() != me.getName()) {
-                ((Client) ff).printMessage(mm);
+        if (!repo.equals(me)) {
+            System.out.println("Такого юзера нет в группе");
+            return;
+        }
+        for (Object client: repo) {
+            if (client.getClass().getName() != me.getName()) {
+                ((Client) client).printMessage(mm);
+            }
+            if (client != me.getName()) {
+                ((Client) client).printMessage(mm);
             }
         }
     }
 
     @Override
-    public void appendClient(Client client) {
-        System.out.println("\n >>> Вошел в чат " + client.getName());
-        repo.add(client);
+    public void appendClient(Client c) {
+        if (repo.equals(c)) {
+            System.out.println("Он уже в группе");
+            return;
+        }
+        System.out.println("\n >>> Вошел в чат " + c.getName());
+        repo.add(c);
     }
 
     @Override

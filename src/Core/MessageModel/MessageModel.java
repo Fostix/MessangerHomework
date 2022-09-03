@@ -12,8 +12,6 @@ public abstract class MessageModel {
         return id;
     }
 
-
-
     public void setId(ID id) {
         this.id = id;
     }

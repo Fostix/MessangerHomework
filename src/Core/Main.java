@@ -16,6 +16,7 @@ public class Main {
         Client client0 = new Admin("Арбуз", icq);
         Client client1 = new PremiumUser("Барсук");
         client1.join(icq);
+        client1.join(icq);
         var client2 = new Donate("Бахрума", icq);
         Client client4 = new RegularUser("Партернак", icq);
 
@@ -31,9 +32,15 @@ public class Main {
         ((PremiumUser) client1).sendVideoMsg("song.mp3", "video.mp4");
 //        ((Admin) client0).getId();
         client2.sendAudioMsg("А вот так тоже можно");
+        System.out.println(String.format("-").repeat(60));
         ((Admin) client0).printInfo();
+        ((Admin) client0).removeUser(4);
+        ((Admin) client0).printInfo();
+        System.out.println(String.format("-").repeat(60));
         ((Admin) client0).removeUser(0);
-        //((Admin) client0).removeUser(1);
+        ((Admin) client0).printInfo();
+        ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
+        ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
         ((Admin) client0).printInfo();
 
         //client1.sendTxtMsg("nlsa");
