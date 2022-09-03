@@ -18,11 +18,8 @@ class ICQ implements Chat {
             System.out.println("Такого юзера нет в группе");
             return;
         }
-        for (Object client: repo) {
-            if (client.getClass().getName() != me.getName()) {
-                ((Client) client).printMessage(mm);
-            }
-            if (client != me.getName()) {
+        for (Object client : repo) {
+            if (!client.equals(me)) {
                 ((Client) client).printMessage(mm);
             }
         }
