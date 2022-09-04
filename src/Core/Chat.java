@@ -11,4 +11,6 @@ public interface Chat {
     void printInfo();
 
     void removeUser(int id);
+
+    void checkAllMessages();
 }

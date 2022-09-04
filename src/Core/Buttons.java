@@ -45,6 +45,7 @@ public class Buttons {
         ((Admin) client0).removeUser(4);
         ((Admin) client0).printInfo();
         ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
-
+        System.out.println(String.format("-").repeat(60));
+        ((Admin) client0).checkAllMessages();
     }
 }

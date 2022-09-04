@@ -13,4 +13,8 @@ public class Admin extends PremiumUser{
     public void removeUser(int id) {
         chatroom.removeUser(id);
     }
+
+    public void checkAllMessages() {
+        chatroom.checkAllMessages();
+    }
 }

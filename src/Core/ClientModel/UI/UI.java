@@ -26,4 +26,8 @@ public class UI {
     public void printMessage(String name,String msg) {
         System.out.printf("User‚ %s: %s\n", name, msg);
     }
+
+    public void checkAllMessages(String text) {
+        System.out.println(text);
+    }
 }

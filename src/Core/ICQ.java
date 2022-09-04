@@ -30,8 +30,10 @@ class ICQ implements Chat {
             }
         }
         msgRep.add(new TxtMessage(me + " send: " + mm));
-        //repo.add(new TxtMessage(me + " send: " + mm.toString()));
+        //repo.add(new TxtMessage(me + " send: " + mm.toString())); // Maybe need ?
     }
+
+
 
     @Override
     public void appendClient(Client c) {
@@ -54,5 +56,12 @@ class ICQ implements Chat {
     @Override
     public void removeUser(int id) {
         ui.kickUser(repo.remove(id));
+    }
+
+    @Override
+    public void checkAllMessages() {
+        for (var msg : msgRep) {
+            ui.checkAllMessages(msg.toString());
+        }
     }
 }
