@@ -26,10 +26,6 @@ public abstract class Client{
         this.chatroom.appendClient(this);
     }
 
-    public void printMessage(MessageModel msg) {
-        System.out.printf("User‚ %s: %s\n", name, msg);
-    }
-
     public String toString() {
         return String.format("%s", this.name);
     }

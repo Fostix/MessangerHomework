@@ -12,7 +12,7 @@ import Core.DataModel.Db;
 //        продумать иерархию пользователей наделив их разными правами например админ, может удалять из чата других пользователей
 //* Хотелось бы увидеть обобщение в этом задание(
 //        * GsonParse если в методе catch блоки одинаковые, то может их стоит объединить?
-public class Main {
+public class Buttons {
     public static void main(String[] args) {
         ICQ icq = new ICQ(new Db());
         Client client0 = new Admin("Арбуз", icq);
@@ -27,7 +27,7 @@ public class Main {
         ((RegularUser) client2).sendTxtMsg("Привет всем!"); // Барсук
         ((RegularUser) client2).sendTxtMsg("Ну привет!"); // Бахрума
         var client3 = new Donate("Вася", icq);
-        Client client5 = new PremiumUser("Барсук", icq);
+        Client client5 = new PremiumUser("Барсук Другой", icq);
         ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
         //client5.sendAudioMsg("bla_bla.mp3");
         client3.sendImageMsg("photo.jpeg");
@@ -39,11 +39,9 @@ public class Main {
         ((Admin) client0).removeUser(1);
         ((Admin) client0).printInfo();
         System.out.println(String.format("-").repeat(60));
-        ((Admin) client0).removeUser(0);
+        ((Admin) client0).removeUser(4);
         ((Admin) client0).printInfo();
         ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
-        ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
-        ((Admin) client0).printInfo();
 
 
         //client1.sendTxtMsg("nlsa");

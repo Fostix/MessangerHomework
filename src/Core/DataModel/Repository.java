@@ -11,5 +11,5 @@ public interface Repository<C extends Client>{
 
     int getCount();
 
-    void remove(int id);
+    String remove(int id);
 }
