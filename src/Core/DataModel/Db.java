@@ -4,7 +4,6 @@ import Core.ClientModel.Client;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Objects;
 
 public class Db<C extends Client> implements Repository<C>, Iterable {
     ArrayList<C> users = new ArrayList<>();
