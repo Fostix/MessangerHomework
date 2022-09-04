@@ -1,7 +1,7 @@
 package Core;
 
 import Core.ClientModel.*;
-import Core.DataModel.Db;
+import Core.DataModel.DbUsers;
 
 //Доработать "мессенджер" разработанный на семинаре
 //        добавив
@@ -14,7 +14,7 @@ import Core.DataModel.Db;
 //        * GsonParse если в методе catch блоки одинаковые, то может их стоит объединить?
 public class Buttons {
     public static void main(String[] args) {
-        ICQ icq = new ICQ(new Db());
+        ICQ icq = new ICQ(new DbUsers());
         Client client0 = new Admin("Арбуз", icq);
         Client client1 = new PremiumUser("Барсук");
         client1.join(icq);

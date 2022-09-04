@@ -1,13 +1,14 @@
 package Core.DataModel;
 
 import Core.ClientModel.Client;
+import Core.ClientModel.Model;
 
-public interface Repository<C extends Client>{
-    void add(C user);
+public interface Repository<M extends Model>{
+    void add(M model);
 
-    C getByName(String name);
+    //M getByName(String name);
 
-    C getById(int id);
+    M getById(int id);
 
     int getCount();
 

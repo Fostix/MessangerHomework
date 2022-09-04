@@ -2,15 +2,15 @@ package Core;
 
 import Core.ClientModel.Client;
 import Core.ClientModel.UI.UI;
-import Core.DataModel.Db;
+import Core.DataModel.DbUsers;
 import Core.MessageModel.MessageModel;
 
 class ICQ implements Chat {
 
-    private Db repo;
+    private DbUsers repo;
     private UI ui = new UI();
 
-    public ICQ(Db currentRepo) {
+    public ICQ(DbUsers currentRepo) {
         repo = currentRepo;
     }
 

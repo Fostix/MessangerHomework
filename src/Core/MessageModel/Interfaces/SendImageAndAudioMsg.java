@@ -1,4 +1,4 @@
-package Core.ClientModel.Interfaces;
+package Core.MessageModel.Interfaces;
 
 public interface SendImageAndAudioMsg {
     void sendAudioMsg(String msg);

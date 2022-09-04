@@ -1,7 +1,7 @@
 package Core.ClientModel;
 
 import Core.Chat;
-import Core.ClientModel.Interfaces.SendTxtMsg;
+import Core.MessageModel.Interfaces.SendTxtMsg;
 import Core.MessageModel.TxtMessage;
 
 public class RegularUser extends Client implements SendTxtMsg {

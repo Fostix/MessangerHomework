@@ -1,7 +1,7 @@
 package Core.ClientModel;
 
 import Core.Chat;
-import Core.ClientModel.Interfaces.SendVideoMsg;
+import Core.MessageModel.Interfaces.SendVideoMsg;
 import Core.MessageModel.VideoMessage;
 
 public class PremiumUser extends Donate implements SendVideoMsg {

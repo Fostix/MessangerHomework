@@ -1,9 +1,8 @@
 package Core.ClientModel;
 
 import Core.Chat;
-import Core.MessageModel.*;
 
-public abstract class Client{
+public abstract class Client extends Model{
     private String name;
     protected Chat chatroom;
 

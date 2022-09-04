@@ -1,7 +1,7 @@
 package Core.ClientModel;
 
 import Core.Chat;
-import Core.ClientModel.Interfaces.SendImageAndAudioMsg;
+import Core.MessageModel.Interfaces.SendImageAndAudioMsg;
 import Core.MessageModel.AudioMessage;
 import Core.MessageModel.ImageMessage;
 

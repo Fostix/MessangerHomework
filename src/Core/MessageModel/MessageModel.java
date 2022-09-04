@@ -1,8 +1,9 @@
 package Core.MessageModel;
 
+import Core.ClientModel.Model;
 import Core.ID;
 
-public abstract class MessageModel {
+public abstract class MessageModel extends Model {
     private ID id;
     public MessageModel() {
         ID id = new ID();
