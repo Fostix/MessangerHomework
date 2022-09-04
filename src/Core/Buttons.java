@@ -29,6 +29,7 @@ public class Buttons {
         var client3 = new Donate("Вася", icq);
         Client client5 = new PremiumUser("Барсук Другой", icq);
         ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
+        ((RegularUser) client4).sendTxtMsg("Hello");
         //client5.sendAudioMsg("bla_bla.mp3");
         client3.sendImageMsg("photo.jpeg");
         ((PremiumUser) client1).sendVideoMsg("song.mp3", "video.mp4");
@@ -43,7 +44,5 @@ public class Buttons {
         ((Admin) client0).printInfo();
         ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
 
-
-        //client1.sendTxtMsg("nlsa");
     }
 }
