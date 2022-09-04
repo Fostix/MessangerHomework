@@ -8,6 +8,11 @@ public class TxtMessage extends MessageModel{
     }
 
     @Override
+    public String play() {
+        return String.format("Чтение:%s", this.txtMessage);
+    }
+
+    @Override
     public String toString() {
         return String.format("%s", this.txtMessage);
     }

@@ -2,16 +2,20 @@ package Core;
 
 import Core.ClientModel.Client;
 import Core.ClientModel.UI.UI;
+import Core.DataModel.BaseStorage;
+import Core.DataModel.DbMessages;
 import Core.DataModel.DbUsers;
 import Core.MessageModel.MessageModel;
+import Core.MessageModel.TxtMessage;
 
 class ICQ implements Chat {
-
     private DbUsers repo;
+    private DbMessages msgRep;
     private UI ui = new UI();
 
-    public ICQ(DbUsers currentRepo) {
+    public <M extends MessageModel> ICQ(DbUsers currentRepo, DbMessages<M> objectDbMessages) {
         repo = currentRepo;
+        msgRep = objectDbMessages;
     }
 
     @Override
@@ -22,9 +26,11 @@ class ICQ implements Chat {
         }
         for (Object client : repo) {
             if (!client.equals(me)) {
-                ui.printMessage(client.toString(), mm.toString());
+                ui.printMessage(client.toString(), mm.play());
             }
         }
+        msgRep.add(new TxtMessage(me + " send: " + mm));
+        //repo.add(new TxtMessage(me + " send: " + mm.toString()));
     }
 
     @Override

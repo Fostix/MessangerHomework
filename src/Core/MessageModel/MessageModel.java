@@ -1,5 +1,6 @@
 package Core.MessageModel;
 
+import Core.ClientModel.Client;
 import Core.ClientModel.Model;
 import Core.ID;
 
@@ -16,4 +17,6 @@ public abstract class MessageModel extends Model {
     public void setId(ID id) {
         this.id = id;
     }
+
+    public abstract String play();
 }

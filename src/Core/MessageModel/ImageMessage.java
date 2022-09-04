@@ -8,7 +8,12 @@ public class ImageMessage extends MessageModel{
     }
 
     @Override
-    public String toString() {
+    public String play() {
         return String.format("Просмотр: %s", this.photo);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s", this.photo);
     }
 }

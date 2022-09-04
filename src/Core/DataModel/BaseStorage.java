@@ -9,7 +9,6 @@ import java.util.List;
 public abstract class BaseStorage<M extends Model> implements Iterable, Repository<M> {
     protected List<M> base = new ArrayList<>();
 
-
     @Override
     public Iterator iterator() {
         Iterator<M> iterator = new Iterator() {

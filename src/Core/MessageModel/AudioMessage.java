@@ -8,7 +8,12 @@ public class AudioMessage extends MessageModel{
     }
 
     @Override
-    public String toString() {
+    public String play() {
         return String.format("Воспроизведение: %s", this.audioMessage);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s", this.audioMessage);
     }
 }
