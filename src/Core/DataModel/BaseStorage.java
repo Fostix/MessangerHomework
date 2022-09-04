@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public abstract class BaseStorage<M extends Model> implements Iterable, Repository<M> {
-    List<M> base = new ArrayList<>();
+    protected List<M> base = new ArrayList<>();
 
 
     @Override
@@ -31,16 +31,6 @@ public abstract class BaseStorage<M extends Model> implements Iterable, Reposito
     public void add(M model) {
         base.add(model);
     }
-
-//    @Override
-//    public M getByName(String name) {
-//        for (M user : base) {
-//            if (base.getName() == name) {
-//                return user;
-//            }
-//        }
-//        return null;
-//    }
 
     @Override
     public M getById(int id) {
