@@ -1,25 +1,17 @@
 package Core;
 
-import Core.ClientModel.*;
+import  Core.ClientModel.*;
 import Core.DataModel.DbMessages;
 import Core.DataModel.DbUsers;
-import Core.MessageModel.MessageModel;
 
-//Доработать "мессенджер" разработанный на семинаре
-//        добавив
-//        - абстрактных пользователей
-//        - абстрактное хранилище
-//        - абстрактные модели сообщения
-//
-//        продумать иерархию пользователей наделив их разными правами например админ, может удалять из чата других пользователей
-//* Хотелось бы увидеть обобщение в этом задание(
-//        * GsonParse если в методе catch блоки одинаковые, то может их стоит объединить?
 public class Buttons {
     public static void main(String[] args) {
-        ICQ icq = new ICQ(new DbUsers(), new DbMessages<MessageModel>());
+        ICQ icq = new ICQ(new DbUsers(), new DbMessages<>());
+        ICQ icqv2 = new ICQ(new DbUsers(), new DbMessages<>());
         Client client0 = new Admin("Арбуз", icq);
         Client client1 = new PremiumUser("Барсук");
         client1.join(icq);
+        client1.join(icqv2);
         client1.join(icq);
         var client2 = new Donate("Бахрума", icq);
         Client client4 = new RegularUser("Партернак", icq);
@@ -46,6 +38,9 @@ public class Buttons {
         ((Admin) client0).printInfo();
         ((PremiumUser) client1).sendAudioMsg("bla_bla.mp3");
         System.out.println(String.format("-").repeat(60));
+        ((PremiumUser) client0).sendAudioMsg("");
+        System.out.println(String.format("-").repeat(60));
         ((Admin) client0).checkAllMessages();
+        ((Admin) client0).printInfo();
     }
 }

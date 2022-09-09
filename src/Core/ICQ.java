@@ -13,11 +13,15 @@ class ICQ implements Chat {
     private DbMessages msgRep;
     private UI ui = new UI();
 
+    /** Creates a messenger so that users can communicate with each other
+     * @param currentRepo database for users
+     * @param objectDbMessages message database */
     public <M extends MessageModel> ICQ(DbUsers currentRepo, DbMessages<M> objectDbMessages) {
         repo = currentRepo;
         msgRep = objectDbMessages;
     }
 
+    /** Creates a messenger so that users can communicate with each other  */
     @Override
     public void sendMessage(MessageModel mm, Client me) {
         if (!repo.equals(me)) {
@@ -30,11 +34,10 @@ class ICQ implements Chat {
             }
         }
         msgRep.add(new TxtMessage(me + " send: " + mm));
-        //repo.add(new TxtMessage(me + " send: " + mm.toString())); // Maybe need ?
     }
 
 
-
+    /** allows you to add a user to the messenger group */
     @Override
     public void appendClient(Client c) {
         if (repo.equals(c)) {
